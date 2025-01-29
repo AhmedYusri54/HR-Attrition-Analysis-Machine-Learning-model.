@@ -24,6 +24,10 @@ if sidebar_option == "Overview":
     st.write(df.describe(include='all'))
     st.write("The percentage of the Attrition classes in the dataset.")
     st.write(df["Attrition"].value_counts())
+    fig, ax = plt.subplots(figsize=(10, 5))
+    sns.countplot(df["Attrition"], ax=ax)
+    plt.title("The percentage of the Attrition classes in the dataset.")
+    st.pyplot(fig)
     
     
 elif sidebar_option == "EDA":
