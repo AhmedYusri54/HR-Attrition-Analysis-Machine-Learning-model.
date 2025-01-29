@@ -5,7 +5,7 @@ import plotly.express as px
 import matplotlib.pyplot as plt
 import pickle as pk
 from wranglefuncation import wrangle
-
+import time as tp
 df = pd.read_csv("WA_Fn-UseC_-HR-Employee-Attrition.csv")
 
 
@@ -124,6 +124,7 @@ elif sidebar_option == "Modeling":
             model = pk.load(f)
             
     if st.button("Predict"):
+        tp.sleep(2)
         y_pred = model.predict(X_test)
         pred = None
         if y_pred[0] == 0:
